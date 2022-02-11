@@ -34,7 +34,7 @@ public class ParkingSpotModel implements Serializable {
     private String block;
     
     @OneToOne
-    private Car car;
+    private CarModel car;
     
     
 	public UUID getId() {

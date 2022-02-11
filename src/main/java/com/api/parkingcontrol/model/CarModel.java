@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_parking_spot")
-public class Car implements Serializable {
+public class CarModel implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -71,7 +71,7 @@ public class Car implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Car other = (Car) obj;
+		CarModel other = (CarModel) obj;
 		return Objects.equals(brandCar, other.brandCar) && Objects.equals(colorCar, other.colorCar)
 				&& Objects.equals(id, other.id) && Objects.equals(licensePlateCar, other.licensePlateCar)
 				&& Objects.equals(modelCar, other.modelCar);
