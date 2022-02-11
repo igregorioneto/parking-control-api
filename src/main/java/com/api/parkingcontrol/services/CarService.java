@@ -1,5 +1,8 @@
 package com.api.parkingcontrol.services;
 
+import java.util.Optional;
+import java.util.UUID;
+
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
@@ -19,6 +22,10 @@ public class CarService {
 	@Transactional
 	public CarModel save(CarModel car) {
 		return repository.save(car);
+	}
+	
+	public Optional<CarModel> findById(UUID id) {
+		return repository.findById(id);
 	}
 
 }

@@ -34,8 +34,7 @@ public class ParkingSpotModel implements Serializable {
     private String block;
     
     @OneToOne
-    private CarModel car;
-    
+    private CarModel car;    
     
 	public UUID getId() {
 		return id;
@@ -72,6 +71,13 @@ public class ParkingSpotModel implements Serializable {
 	}
 	public void setBlock(String block) {
 		this.block = block;
+	}
+	
+	public CarModel getCar() {
+		return car;
+	}
+	public void setCar(CarModel car) {
+		this.car = car;
 	}
 	@Override
 	public int hashCode() {

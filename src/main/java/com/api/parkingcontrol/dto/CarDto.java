@@ -14,6 +14,7 @@ public class CarDto {
     private String modelCar;
     @NotBlank
     private String colorCar;
+    
 	public String getLicensePlateCar() {
 		return licensePlateCar;
 	}

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.api.parkingcontrol.dto.ParkingSpotDto;
 import com.api.parkingcontrol.model.ParkingSpotModel;
+import com.api.parkingcontrol.services.CarService;
 import com.api.parkingcontrol.services.ParkingSpotService;
 
 @RestController
@@ -27,11 +28,16 @@ public class ParkingSpotController {
 	@Autowired
 	private ParkingSpotService service;
 	
+	@Autowired
+	private CarService carService;
+	
 	@PostMapping
 	public ResponseEntity<Object> save(@RequestBody @Valid ParkingSpotDto parking) {
 		var parkingModel = new ParkingSpotModel();
 		BeanUtils.copyProperties(parking, parkingModel);
+		var carModel = carService.findById(parking.getCar_id());
 		parkingModel.setRegistrationDate(LocalDateTime.now(ZoneId.of("UTC")));
+		parkingModel.setCar(carModel.get());
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.save(parkingModel));
 	}
 	
