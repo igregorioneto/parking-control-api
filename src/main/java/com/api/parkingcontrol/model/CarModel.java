@@ -18,6 +18,7 @@ public class CarModel implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	@Column(name = "car_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 	@Column(nullable = false, unique = true, length = 7)

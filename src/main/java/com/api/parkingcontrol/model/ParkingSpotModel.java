@@ -10,7 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -33,8 +32,6 @@ public class ParkingSpotModel implements Serializable {
     @Column(nullable = false, length = 30)
     private String block;
     
-    @OneToOne
-    private CarModel car;    
     
 	public UUID getId() {
 		return id;
@@ -73,12 +70,7 @@ public class ParkingSpotModel implements Serializable {
 		this.block = block;
 	}
 	
-	public CarModel getCar() {
-		return car;
-	}
-	public void setCar(CarModel car) {
-		this.car = car;
-	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(apartment, block, id, parkingSpotNumber, registrationDate, responsibleName);

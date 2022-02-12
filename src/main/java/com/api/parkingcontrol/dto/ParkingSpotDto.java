@@ -1,7 +1,5 @@
 package com.api.parkingcontrol.dto;
 
-import java.util.UUID;
-
 import javax.validation.constraints.NotBlank;
 
 public class ParkingSpotDto {
@@ -14,8 +12,6 @@ public class ParkingSpotDto {
     private String apartment;
     @NotBlank
     private String block;
-    @NotBlank
-    private UUID car_id;
     
 	public String getParkingSpotNumber() {
 		return parkingSpotNumber;
@@ -40,12 +36,6 @@ public class ParkingSpotDto {
 	}
 	public void setBlock(String block) {
 		this.block = block;
-	}
-	public UUID getCar_id() {
-		return car_id;
-	}
-	public void setCar_id(UUID car_id) {
-		this.car_id = car_id;
 	}
 	
 }
